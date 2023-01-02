@@ -2,7 +2,7 @@ package signal
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -25,7 +25,7 @@ func TestHandler(t *testing.T) {
 		t.Errorf("Handler() Content-Type = %q; want %q", contentType, "application/json")
 	}
 
-	data, err := ioutil.ReadAll(resp.Body)
+	data, err := io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatalf("ioutil.ReadAll(resp.Body) err = %s", err)
 	}
