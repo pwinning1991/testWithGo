@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"testWithGo/math"
+	"github.com/pwinning1991/testWithGo/math"
 )
 
 func main() {
@@ -11,4 +11,12 @@ func main() {
 		msg := fmt.Sprintf("FAIL: wanted 11 but got %d", sum)
 		panic(msg)
 	}
+	fmt.Println("PASS")
+
+	add := math.Add(5, 10)
+	if add != 15 {
+		msg := fmt.Sprintf("FAIL: wanted 15 but got %d", add)
+		panic(msg)
+	}
+	fmt.Println("PASS")
 }
